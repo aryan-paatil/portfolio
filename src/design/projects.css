@@ -1,0 +1,67 @@
+/* ===== Projects Section Container ===== */
+.projects-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+  gap: 2rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Section Title ===== */
+h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-top: 4rem;
+  color: #fff;
+  font-family: "Urbanist", sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Individual Project Card Layout ===== */
+.project-card {
+  flex: 1 1 340px; /* responsive width but consistent sizing */
+  max-width: 370px;
+  min-width: 300px;
+}
+
+/* ===== Responsiveness ===== */
+
+/* Medium screens (2 per row) */
+@media (max-width: 992px) {
+  .projects-section {
+    gap: 1.5rem;
+    padding: 3rem 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    margin-top: 3rem;
+  }
+
+  .project-card {
+    flex: 1 1 45%;
+  }
+}
+
+/* Small screens (1 per row) */
+@media (max-width: 600px) {
+  .projects-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .project-card {
+    width: 90%;
+    max-width: 350px;
+  }
+}

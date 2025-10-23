@@ -1,48 +1,50 @@
 /* Wrapper with gradient border */
 .navbar-wrapper {
-  position: sticky;
-  top: 20px;
-  margin: 0 auto;
+  position: fixed;
+  top: 40px; /* lowers navbar slightly */
+  left: 50%;
+  transform: translateX(-50%);
   width: 90%;
   max-width: 1200px;
-  border-radius: 50px; /* pill shape */
+  border-radius: 50px;
   background: linear-gradient(
     90deg,
     rgba(66, 66, 66, 0.7),
     rgba(168, 168, 168, 1),
     rgba(66, 66, 66, 0.7)
-  ); /* gradient border */
-  padding: 2px; /* border thickness */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* floating effect */
+  );
+  padding: 2px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   z-index: 1000;
 }
 
-/* Inner navbar with dark background */
+/* Inner navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #181818; /* main dark background */
-  border-radius: 50px; /* match wrapper */
+  background-color: #181818;
+  border-radius: 50px;
   padding: 10px 25px;
-  backdrop-filter: blur(8px); /* optional glassy effect */
 }
 
 /* Logo */
 .logo {
-  background-color: #d3d3d3; /* light grey square */
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #333;
-  border-radius: 10px;
+  border-radius: 16px;
+  border: 1px solid #fff;
+  background: linear-gradient(127deg, #fff 9.14%, #999 135.93%);
+  box-shadow: 0 2px 8.8px rgba(201, 201, 201, 0.25);
 }
 
-/* Social icons container */
+/* Social icons */
 .social-icons {
   display: flex;
   gap: 20px;
@@ -56,18 +58,40 @@
 
 .social-icons a:hover {
   transform: scale(1.2);
-  color: #ffcc00;
+  color: #999;
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 600px) {
   .navbar {
-    flex-direction: column;
-    padding: 15px 20px;
+    flex-direction: row;
     gap: 10px;
+    padding: 10px 15px;
   }
 
   .social-icons {
     gap: 15px;
+  }
+
+  .navbar-wrapper {
+    top: 25px;
+    width: 85%; /* slightly smaller on mobile for floating effect */
+    border-radius: 40px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-wrapper {
+    width: 80%; /* even smaller for tiny screens */
+  }
+
+  .social-icons a {
+    font-size: 1.3rem;
+  }
+
+  .logo {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
   }
 }
