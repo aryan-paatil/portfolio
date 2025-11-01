@@ -12,6 +12,7 @@ export default function Projects() {
         type="Academic"
         github="github"
         buttonText="Code"
+        codeLink="https://github.com/aaryan-exe/Healthcare-Appointment-System"
         // img={projectImg}
       />
 
